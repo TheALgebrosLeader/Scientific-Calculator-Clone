@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Casio Scientific Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <!-- Standard Buttons -->
+            <div class="button-row">
+                <button class="function-button" onclick="clearDisplay()">C</button>
+                <button class="function-button" onclick="toggleSign()">+/-</button>
+                <button class="function-button" onclick="percent()">%</button>
+                <button class="operator-button" onclick="setOperator('/')">÷</button>
+            </div>
+            <div class="button-row">
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button class="operator-button" onclick="setOperator('*')">x</button>
+            </div>
+            <div class="button-row">
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button class="operator-button" onclick="setOperator('-')">-</button>
+            </div>
+            <div class="button-row">
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button class="operator-button" onclick="setOperator('+')">+</button>
+            </div>
+            <div class="button-row">
+                <button class="zero-button" onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button class="operator-button" onclick="calculateResult()">=</button>
+            </div>
+            
+            <!-- Scientific Buttons -->
+            <div class="button-row">
+                <button class="function-button" onclick="performOperation('sqrt')">√</button>
+                <button class="function-button" onclick="performOperation('power')">x<sup>y</sup></button>
+                <button class="function-button" onclick="performOperation('log')">log</button>
+                <button class="function-button" onclick="performOperation('sin')">sin</button>
+            </div>
+            <div class="button-row">
+                <button class="function-button" onclick="performOperation('cos')">cos</button>
+                <button class="function-button" onclick="performOperation('tan')">tan</button>
+                <button class="constant-button" onclick="appendToDisplay('pi')">π</button>
+                <button class="constant-button" onclick="appendToDisplay('e')">e</button>
+            </div>
+            <div class="button-row">
+                <button class="function-button" onclick="performOperation('asin')">asin</button>
+                <button class="function-button" onclick="performOperation('acos')">acos</button>
+                <button class="function-button" onclick="performOperation('atan')">atan</button>
+                <button class="function-button" onclick="performOperation('exp')">exp</button>
+            </div>
+            
+            <!-- Memory Buttons -->
+            <div class="button-row">
+                <button class="memory-button" onclick="memoryStore()">MS</button>
+                <button class="memory-button" onclick="memoryRecall()">MR</button>
+                <button class="memory-button" onclick="memoryClear()">MC</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
